@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "log_name": "ContradictionMap",
+    "description": "Map of all conflicts between competing truths, philosophies, or implementations",
+    "generated_date": "2025-11-24",
+    "analyst": "Claude Sonnet 4.5",
+    "total_contradictions": 5
+  },
+  "contradictions": [
+    {
+      "id": "C1",
+      "description": "Repository name vs. actual implementation scope",
+      "severity": "Medium",
+      "type": "Semantic Ambiguity",
+      "side_a": {
+        "position": "Repository represents a full service",
+        "artifacts": ["E4"],
+        "evidence": "README describes 'a service offering AI Educational Tools' - implies multi-feature service platform",
+        "implications": "Users might expect backend API, database, authentication, actual AI functionality"
+      },
+      "side_b": {
+        "position": "Repository is only a marketing landing page",
+        "artifacts": ["E6"],
+        "evidence": "Index.jsx implements only a marketing page with hero section and feature cards - no actual service functionality",
+        "implications": "This is promotional content, not a functioning service"
+      },
+      "related_idea_indices": ["I-1", "I-2"],
+      "resolution_status": "Unresolved",
+      "proposed_primary_truth": "Side B is reality",
+      "recommended_action": "Clarify in README that this is the landing page FOR the service, not the service itself",
+      "impact": "User confusion about repository purpose",
+      "priority": "High"
+    },
+    {
+      "id": "C2",
+      "description": "Prettier configuration intent - extreme line width value",
+      "severity": "Low",
+      "type": "Configuration Anomaly",
+      "side_a": {
+        "position": "Intentional configuration for LLM workflow",
+        "artifacts": ["E5"],
+        "evidence": "printWidth: 99999999 - extreme value clearly intentional, not accidental",
+        "implications": "Code will never be line-wrapped, potentially optimized for LLM-generated code readability"
+      },
+      "side_b": {
+        "position": "Should follow standard web dev practices",
+        "artifacts": [],
+        "evidence": "Standard prettier configs use 80-120 character line widths for human readability",
+        "implications": "Long lines may be harder for human developers to read"
+      },
+      "related_idea_indices": ["I-8"],
+      "resolution_status": "Unresolved",
+      "proposed_primary_truth": "Side A is intentional but unusual",
+      "recommended_action": "Document the rationale in README or normalize to standard value (80-120)",
+      "impact": "Code style consistency for collaborators",
+      "priority": "Medium"
+    },
+    {
+      "id": "C3",
+      "description": "Docker port configuration alignment",
+      "severity": "None",
+      "type": "Configuration Check",
+      "side_a": {
+        "position": "Docker maps port 8080:8080",
+        "artifacts": ["E7"],
+        "evidence": "docker-compose.yml: ports: '8080:8080'",
+        "implications": "Container port 8080 exposed to host port 8080"
+      },
+      "side_b": {
+        "position": "Vite dev server runs on port 8080",
+        "artifacts": ["E11"],
+        "evidence": "vite.config.js: port: '8080'",
+        "implications": "Dev server listens on port 8080 inside container"
+      },
+      "related_idea_indices": ["I-4", "I-5"],
+      "resolution_status": "Resolved - No Contradiction",
+      "proposed_primary_truth": "Both sides aligned - configuration is correct",
+      "recommended_action": "None required",
+      "impact": "None - ports are properly aligned",
+      "priority": "None"
+    },
+    {
+      "id": "C4",
+      "description": "Development workflow model ambiguity - dual paths risk conflict",
+      "severity": "High",
+      "type": "Process Conflict",
+      "side_a": {
+        "position": "Use GPT Engineer app for development",
+        "artifacts": ["E4"],
+        "evidence": "README: 'Changes made via gptengineer.app will be committed to this repo'",
+        "implications": "AI-assisted development via web interface, auto-sync to GitHub"
+      },
+      "side_b": {
+        "position": "Use traditional git workflow",
+        "artifacts": ["E4"],
+        "evidence": "README: 'If you clone this repo and push changes, you will have them reflected in the GPT Engineer UI'",
+        "implications": "Manual development, commit, push to GitHub, sync back to GPT Engineer"
+      },
+      "related_idea_indices": ["I-6"],
+      "resolution_status": "Unresolved",
+      "proposed_primary_truth": "Both are true but potentially conflicting",
+      "recommended_action": "Document which workflow is primary; warn against mixing both approaches",
+      "impact": "High risk of merge conflicts if developers use different workflows",
+      "priority": "Critical"
+    },
+    {
+      "id": "C5",
+      "description": "Commit message depth vs. actual change magnitude",
+      "severity": "Low",
+      "type": "LLM Artifact - Generic Messaging",
+      "side_a": {
+        "position": "Commit message indicates minimal change",
+        "artifacts": ["E1"],
+        "evidence": "Commit message: 'Initial commit' - generic, minimal description",
+        "implications": "Appears to be a small, simple commit"
+      },
+      "side_b": {
+        "position": "Commit contains substantial scaffolding",
+        "artifacts": ["E1"],
+        "evidence": "Commit changes: 13 files, 6,055 lines added - entire project structure created",
+        "implications": "Major repository initialization, not a trivial commit"
+      },
+      "related_idea_indices": ["I-1", "I-2", "I-3", "I-4", "I-5", "I-6", "I-7", "I-8"],
+      "resolution_status": "Noted - Standard LLM Behavior",
+      "proposed_primary_truth": "Generic message is standard for scaffold generation",
+      "recommended_action": "None required; this is typical LLM/automation behavior",
+      "impact": "Low - commit message doesn't affect functionality",
+      "priority": "Low",
+      "notes": "Common pattern for automated code generation tools; not a real contradiction, just typical LLM brevity"
+    }
+  ],
+  "summary": {
+    "total_contradictions": 5,
+    "by_resolution_status": {
+      "resolved": 1,
+      "unresolved": 3,
+      "noted": 1
+    },
+    "by_severity": {
+      "critical": 0,
+      "high": 1,
+      "medium": 1,
+      "low": 2,
+      "none": 1
+    },
+    "by_priority": {
+      "critical": 1,
+      "high": 1,
+      "medium": 1,
+      "low": 1,
+      "none": 1
+    },
+    "action_required": {
+      "immediate": 2,
+      "soon": 1,
+      "optional": 1,
+      "none": 1
+    },
+    "key_findings": [
+      "C1 and C4 require immediate documentation updates (critical/high priority)",
+      "C2 is a minor anomaly requiring documentation or normalization",
+      "C3 is not actually a contradiction - configuration is properly aligned",
+      "C5 is a typical LLM artifact pattern, not a real issue"
+    ],
+    "llm_artifact_patterns": [
+      "Generic commit messages for substantial changes (C5)",
+      "Unusual configuration choices without documented rationale (C2)",
+      "Ambiguous documentation that doesn't clarify edge cases (C1, C4)"
+    ]
+  }
+}
