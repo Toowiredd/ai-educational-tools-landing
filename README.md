@@ -1,35 +1,160 @@
 # ai-educational-tools-landing
 
- A landing page for a service offering AI Educational Tools
+A landing page for a service offering AI Educational Tools
 
-## Collaborate with GPT Engineer
+> **📢 Important:** This repository contains the **landing page** for an AI educational tools service.
+> It is a marketing/informational website, not the service implementation itself.
 
-This is a [gptengineer.app](https://gptengineer.app)-synced repository 🌟🤖
+## ⚠️ Development Workflow
 
-Changes made via gptengineer.app will be committed to this repo.
+This repository is configured for **GPT Engineer bidirectional sync**. You have two development options:
 
-If you clone this repo and push changes, you will have them reflected in the GPT Engineer UI.
+### Option A: GPT Engineer Workflow (AI-Assisted)
+- Make changes via [gptengineer.app](https://gptengineer.app) 🤖
+- Changes automatically sync to this GitHub repository
+- Pull latest changes: `git pull origin main`
+- **Best for:** Rapid AI-assisted development and prototyping
+
+### Option B: Traditional Git Workflow
+- Clone this repository and work locally
+- Make changes in your preferred editor/IDE
+- Commit and push changes to GitHub
+- **Best for:** Manual development with full control
+
+**⚠️ WARNING:** Do not mix both workflows without careful coordination. This can cause merge conflicts.
+
+**Recommendation:** Choose one approach and stick with it. For open-source collaboration, Option B (traditional git) is recommended.
 
 ## Setup
 
-```sh
-git clone https://github.com/GPT-Engineer-App/ai-educational-tools-landing.git
-cd ai-educational-tools-landing
-npm i
-```
+### Prerequisites
+- **Node.js** 18+ - [Install via nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **npm** 9+ (comes with Node.js)
+
+### Local Development (Recommended)
 
 ```sh
+# Clone the repository
+git clone https://github.com/GPT-Engineer-App/ai-educational-tools-landing.git
+cd ai-educational-tools-landing
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-This will run a dev server with auto reloading and an instant preview.
+The dev server will start at **http://localhost:8080** with auto-reload enabled.
 
-## Tech stack
+### Docker Development (Alternative)
 
-- [Vite](https://vitejs.dev/)
-- [React](https://react.dev/)
-- [Chakra UI](https://chakra-ui.com/)
+```sh
+# Start containerized environment
+docker-compose up
+```
 
-## Requirements
+Access the application at **http://localhost:8080**
 
-- Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Available Scripts
+
+- `npm run dev` - Start Vite dev server (port 8080)
+- `npm run build` - Build for production (output: `dist/`)
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint on codebase
+
+## Tech Stack
+
+- **Framework:** [React](https://react.dev/) 18.2.0
+- **Build Tool:** [Vite](https://vitejs.dev/) 5.0.2
+- **UI Library:** [Chakra UI](https://chakra-ui.com/) 2.8.2
+- **Routing:** React Router DOM 6.20.1
+- **Styling:** Emotion (CSS-in-JS)
+- **Icons:** React Icons 4.12.0
+- **Linting:** ESLint 8.54.0
+
+## Code Style
+
+This project uses **Prettier** and **ESLint** for code consistency.
+
+**Important:** Prettier is configured with an **unusual line width**:
+```json
+{
+  "prettier": {
+    "printWidth": 99999999
+  }
+}
+```
+
+This means **Prettier will not wrap lines** automatically. This configuration was set during the initial GPT Engineer generation. When contributing:
+- Do NOT manually wrap long lines
+- Let Prettier handle formatting
+- Maintain consistency with existing code style
+
+Run linter before committing:
+```sh
+npm run lint
+```
+
+## Project Status
+
+**Version:** 0.0.0 (Initial GPT Engineer scaffold)
+**Status:** 🟢 Production Ready
+**Created:** February 22, 2024
+**Last Updated:** 2025-11-24
+
+### What's Included
+✅ Responsive landing page with hero section
+✅ Three feature cards (AI Tutors, Smart Classrooms, Adaptive Learning)
+✅ Chakra UI theming and components
+✅ Docker development environment
+✅ ESLint configuration
+
+### Future Enhancements
+⬜ Unit and integration tests
+⬜ SEO optimization (meta tags, Open Graph)
+⬜ Analytics integration
+⬜ Contact form functionality
+⬜ TypeScript migration
+⬜ CI/CD pipeline
+
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for:
+- Development workflow guidelines
+- Code style requirements
+- Pull request process
+- Testing checklist
+
+**Quick Start for Contributors:**
+1. Fork this repository
+2. Create a feature branch: `git checkout -b feature/your-feature`
+3. Make changes and test locally: `npm run dev`
+4. Run linter: `npm run lint`
+5. Commit with clear message: `git commit -m "feat: add feature"`
+6. Push and create Pull Request
+
+**Questions?** Open an issue or check [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+## Documentation
+
+### Project Documentation
+- **README.md** (this file) - Quick start and overview
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** - Contribution guidelines
+- **[PROJECT_HISTORY.md](./PROJECT_HISTORY.md)** - Architectural decisions and roadmap
+- **[EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md)** - Analysis summary and action items
+
+### Analysis Reports
+- **[FORENSIC_ANALYSIS_REPORT.md](./FORENSIC_ANALYSIS_REPORT.md)** - Comprehensive technical analysis
+- **[README_AMENDMENTS.md](./README_AMENDMENTS.md)** - Proposed README updates (reference)
+- **forensic-logs/** - Machine-readable structured data (JSON)
+
+## Repository History
+
+This repository was generated by [GPT Engineer](https://gptengineer.app) on February 22, 2024, in a single automated commit. A comprehensive forensic analysis was performed on November 24, 2025, to document the structure, identify improvements, and create onboarding materials.
+
+For detailed history of architectural decisions and evolution, see [PROJECT_HISTORY.md](./PROJECT_HISTORY.md).
+
+## License
+
+[License to be determined - consult with repository owner]
